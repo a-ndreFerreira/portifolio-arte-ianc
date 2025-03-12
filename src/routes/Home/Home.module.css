@@ -1,0 +1,107 @@
+/* .divImgBg {
+    position: relative;
+}
+
+.divImgBg img {
+    width: 100%;
+    object-fit: cover;
+} */
+
+.containerSection {
+    position: relative;
+    max-width: 100vw;
+    width: 100%;
+    padding: .5rem;
+    overflow: hidden;
+}
+
+.divImgBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.divImgBg img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.sleeve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+.containerHero {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-height: 100vh;
+    max-width: 100vw;
+    padding: 1.3rem;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    max-width: 21.8rem;
+    margin-bottom: 1.8rem;
+}
+
+
+
+/*prabaixo*/
+
+.containerContent {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+
+.arteContent {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+.iancContent {
+    font-size: 5em;
+    font-weight: bold;
+}
+
+.iancContent span {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+
+@media (max-width: 48rem) {
+    .hero img {
+        max-width: 15.7rem;
+    }
+
+    .arteContent {
+        font-size: 1em;
+    }
+
+    .iancContent {
+        font-size: 3em;
+    }
+}
