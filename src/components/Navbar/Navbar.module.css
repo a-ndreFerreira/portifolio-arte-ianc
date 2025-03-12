@@ -1,0 +1,70 @@
+.navbar {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(180deg,
+            #20201b 0%,
+            #10100b 60%,
+            #000000 100%);
+    color: #fff;
+}
+
+.divHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.divIanc {
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.divIanc p {
+    font-size: .8rem;
+    margin: .4rem 0;
+}
+
+.divIanc span {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: .1rem .5rem;
+    border-radius: .5rem;
+}
+
+.ulNavbar {
+    height: 0;
+    overflow: hidden;
+    transition: all .2s ease;
+}
+
+.ulNavbar a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media(min-width: 46.8rem) {
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .ulNavbar {
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        padding: .8rem;
+        height: auto;
+    }
+
+    .buttonToggle {
+        display: none;
+    }
+}
