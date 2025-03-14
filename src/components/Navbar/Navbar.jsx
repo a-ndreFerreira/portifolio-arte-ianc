@@ -16,6 +16,7 @@ const Navbar = () => {
         { link: 'Home', path: '/' },
         { link: 'Projetos', path: '/projects' },
         { link: 'Sobre', path: '/about' },
+        { link: 'Loja', path: '/store' },
         { link: 'Contato', path: '/contact' }
     ]
 

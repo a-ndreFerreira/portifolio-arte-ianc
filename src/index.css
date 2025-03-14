@@ -19,7 +19,7 @@ a {
     color: #fff;
     padding: .5rem .8rem;
     border-radius: .3rem;
-    transition: background-color .3s ease;
+    transition: all .3s ease;
 }
 
 ul {
