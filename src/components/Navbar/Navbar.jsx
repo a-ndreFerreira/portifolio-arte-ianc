@@ -9,6 +9,7 @@ import { FaBehance } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
 import { FaLinkedinIn } from "react-icons/fa";
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
 
@@ -26,11 +27,35 @@ const Navbar = () => {
         { link: <FaLinkedinIn />, to: 'http://linkedin.com' }
     ]
 
+    const [toggleMenu, setToggleMenu] = useState(false);
+
+    const handleToggleMenu = () => {
+        setToggleMenu(prev => !prev)
+    }
+
+    const handleCloseMenu = () => {
+        setToggleMenu(false);
+    }
+
+    const handleResize = () => {
+        if (window.innerWidth >= 748 && toggleMenu) {
+            setToggleMenu(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, [toggleMenu])
+
     return (
         <nav className={styles.navbar}>
             <div className={styles.divHeader}>
                 <div className={styles.divIanc}>
-                    <Link to='/'>
+                    <Link to='/' onClick={handleCloseMenu}>
                         IA<span>N</span>C
                     </Link>
                     <p>
@@ -38,20 +63,20 @@ const Navbar = () => {
                     </p>
                 </div>
 
-                <button className={styles.buttonToggle}>
+                <button className={styles.buttonToggle} onClick={handleToggleMenu}>
                     <FaBarsStaggered />
                 </button>
             </div>
 
             <div className={styles.divListsNavbar}>
-                <ul className={styles.ulNavbar}>
+                <ul className={`${styles.ulNavbar} ${toggleMenu ? styles.toggleMenu : ''}`}>
                     {
                         navbarContent.map((item) => {
                             const { link, path } = item;
 
                             return (
                                 <li key={path}>
-                                    <NavLink to={path} className={({ isActive }) => (isActive ? styles.active : '')}>
+                                    <NavLink to={path} className={({ isActive }) => (isActive ? styles.active : '')} onClick={handleCloseMenu}>
                                         {link}
                                     </NavLink>
                                 </li>
@@ -60,7 +85,7 @@ const Navbar = () => {
                     }
                 </ul>
 
-                <ul className={styles.ulSocialMedia}>
+                <ul className={`${styles.ulSocialMedia} ${toggleMenu ? styles.toggleMenuSm : ''}`}>
                     {
                         socialMedia.map((item) => {
                             const { link, to } = item;
@@ -77,7 +102,7 @@ const Navbar = () => {
                 </ul>
             </div>
 
-        </nav>
+        </nav >
     )
 }
 

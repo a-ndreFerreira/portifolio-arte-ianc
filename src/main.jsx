@@ -10,6 +10,7 @@ import Contact from './routes/Contact/Contact.jsx'
 import RootLayout from './routes/Root/RootLayout.jsx'
 import Projects from './routes/Projects/Projects.jsx'
 import Store from './routes/Store/Store.jsx'
+import Project from './routes/Project/Project.jsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/projects',
         element: <Projects />
+      },
+      {
+        path: '/projects/project/:id',
+        element: <Project />
       },
       {
         path: '/about',
