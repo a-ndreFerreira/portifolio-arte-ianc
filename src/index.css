@@ -49,6 +49,11 @@ textarea:focus {
     outline: none;
 }
 
+input,
+textarea {
+    border: none;
+}
+
 button {
     padding: .8rem;
     border: none;

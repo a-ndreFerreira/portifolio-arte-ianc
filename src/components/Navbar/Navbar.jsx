@@ -92,7 +92,7 @@ const Navbar = () => {
 
                             return (
                                 <li key={to}>
-                                    <Link to={to} target='_blank'>
+                                    <Link to={to} target='_blank' onClick={handleCloseMenu}>
                                         {link}
                                     </Link>
                                 </li>
